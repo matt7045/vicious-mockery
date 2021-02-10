@@ -6,7 +6,7 @@ import json
 # This bot casts Vicious Mockery on an unfortunate soul in a discord channel.
 #  This is done by typing the command
 #
-#   /mock @nameOfPerson
+#   !mock @nameOfPerson
 #
 #The URL for our bot is
 #
@@ -45,7 +45,7 @@ async def on_message(message):
     #Split the message into it's sections
     message_parts = message.content.split(' ')
     #If the message is a mock command
-    if (len(message_parts) >= 2) and (message_parts[0].lower() == '/mock'):
+    if (len(message_parts) >= 2) and (message_parts[0].lower() == '!mock'):
         #Generate an insult
         insult = await generateInsult()
         insult_string = 'Hey '+' '.join(message_parts[1:])+', '+insult[0].lower()+insult[1:]
