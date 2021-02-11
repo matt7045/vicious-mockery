@@ -57,11 +57,9 @@ with open('credentials.config', 'r') as f:
     credentials = json.load(f)
     token = credentials["discord_token"]
 #Run the client
-done = False
-while not done:
+while True:
     try:
         client.run(token)
-        done = True
     except KeyboardInterrupt:
         break
     except Exception as e:
